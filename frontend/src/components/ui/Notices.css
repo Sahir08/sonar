@@ -1,0 +1,39 @@
+.disclaimer {
+  max-width: 60ch;
+  margin-inline: auto;
+  padding-block: var(--s-4);
+  font-size: var(--fs-caption);
+  line-height: 1.5;
+  text-align: center;
+  color: var(--text-3);
+}
+
+.privacy-note {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-2);
+  font-size: var(--fs-small);
+  color: var(--text-2);
+}
+
+.privacy-note svg {
+  flex: none;
+  margin-top: 1px;
+}
+
+.info-note {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-2);
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-card-sm);
+  background: var(--surface-2);
+  font-size: var(--fs-small);
+  color: var(--text);
+}
+
+.info-note svg {
+  flex: none;
+  margin-top: 1px;
+  color: var(--info);
+}

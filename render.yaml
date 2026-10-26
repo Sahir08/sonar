@@ -1,0 +1,18 @@
+# Render Blueprint for the Sonar API (Flask + gunicorn).
+# Render dashboard: New > Blueprint, pick this repo. You'll be asked for ALLOWED_ORIGINS.
+services:
+  - type: web
+    name: sonar-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    # One worker keeps memory under the free plan's 512 MB (each worker loads the model);
+    # 4 threads handle concurrent requests. --timeout covers slow uploads and Nightscout fetches.
+    startCommand: gunicorn app:app --workers 1 --threads 4 --timeout 120 --bind 0.0.0.0:$PORT --access-logfile -
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.7
+      # The frontend's URL(s), comma-separated, e.g. https://sonar.vercel.app
+      - key: ALLOWED_ORIGINS
+        sync: false

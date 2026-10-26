@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="trail" gradientUnits="userSpaceOnUse" x1="3.49" y1="0" x2="44.51" y2="0">
+      <stop offset="0" stop-color="#5ED3C3" stop-opacity="0"/>
+      <stop offset="0.45" stop-color="#5ED3C3" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#6CA8FF" stop-opacity="0.75"/>
+    </linearGradient>
+    <linearGradient id="edge" gradientUnits="userSpaceOnUse" x1="24" y1="37" x2="44.51" y2="16.49">
+      <stop offset="0" stop-color="#5ED3C3"/>
+      <stop offset="1" stop-color="#6CA8FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="#0B0E14"/>
+  <!-- Radar sweep: pivot (24,37), radius 29, quarter wedge from 225° to 315° -->
+  <g transform="translate(40 40) scale(9)">
+    <path d="M24 37 L3.49 16.49 A29 29 0 0 1 44.51 16.49 Z" fill="url(#trail)"/>
+    <path d="M24 37 L44.51 16.49" stroke="url(#edge)" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="24" cy="37" r="3" fill="#5ED3C3"/>
+    <circle cx="16" cy="19" r="2.5" fill="#5ED3C3"/>
+  </g>
+</svg>

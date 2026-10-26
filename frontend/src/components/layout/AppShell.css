@@ -1,0 +1,78 @@
+.app {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.app__main {
+  padding:
+    calc(env(safe-area-inset-top, 0px) + var(--s-6))
+    calc(env(safe-area-inset-right, 0px) + var(--s-4))
+    calc(env(safe-area-inset-bottom, 0px) + var(--s-7))
+    calc(env(safe-area-inset-left, 0px) + var(--s-4));
+}
+
+.app__main:focus {
+  outline: none;
+}
+
+.app--has-tabs .app__main {
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + var(--tabbar-h) + var(--s-6));
+}
+
+.app__content {
+  width: 100%;
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+/* Visually hidden (not moved off-screen, which can peek into the iPhone status bar in standalone mode);
+   shown below the safe area only when focused from the keyboard */
+.skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link:focus-visible {
+  position: fixed;
+  top: calc(env(safe-area-inset-top, 0px) + 8px);
+  left: 8px;
+  z-index: 100;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 10px 16px;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  border-radius: var(--r-pill);
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+@media (min-width: 900px) {
+  .app {
+    display: grid;
+    grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
+  }
+
+  .app__main,
+  .app--has-tabs .app__main {
+    padding:
+      calc(env(safe-area-inset-top, 0px) + 40px)
+      calc(env(safe-area-inset-right, 0px) + var(--s-7))
+      64px
+      var(--s-7);
+  }
+
+  .app__content {
+    max-width: var(--content-max);
+  }
+}

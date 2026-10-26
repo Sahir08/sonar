@@ -1,0 +1,119 @@
+.perf__takeaway {
+  max-width: 62ch;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.perf__cards {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--s-3);
+  list-style: none;
+}
+
+@media (min-width: 760px) {
+  .perf__cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.perf-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+  height: 100%;
+}
+
+.perf-card.is-main {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    var(--accent-gradient) border-box;
+}
+
+.perf-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-2);
+}
+
+.perf-card__title {
+  font-size: var(--fs-h2);
+  font-weight: 700;
+}
+
+.perf-card__tag {
+  padding: 3px 10px;
+  border-radius: var(--r-pill);
+  background: var(--surface-2);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  color: var(--text-2);
+  white-space: nowrap;
+}
+
+.perf-card__sub {
+  font-size: var(--fs-small);
+  color: var(--text-2);
+}
+
+.perf-card__metrics {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  margin: var(--s-4) 0 0;
+}
+
+.perf-card__metrics div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding-top: var(--s-3);
+  border-top: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+}
+
+.perf-card__metrics dt {
+  font-size: var(--fs-small);
+  color: var(--text-2);
+}
+
+.perf-card__metrics dd {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.perf-card__metrics small {
+  font-size: var(--fs-caption);
+  font-weight: 500;
+  color: var(--text-2);
+}
+
+.perf__footnote {
+  font-size: var(--fs-small);
+  color: var(--text-2);
+}
+
+.perf__footnote strong {
+  color: var(--text);
+}
+
+.perf__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.perf__heading {
+  font-size: var(--fs-body);
+  font-weight: 700;
+}
+
+.perf__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  padding-left: var(--s-5);
+}

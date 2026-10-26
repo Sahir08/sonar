@@ -1,0 +1,96 @@
+.horizon {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.horizon__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-3);
+  flex-wrap: wrap;
+}
+
+.horizon__title {
+  font-size: var(--fs-small);
+  color: var(--text-2);
+}
+
+.horizon__headline {
+  font-size: var(--fs-small);
+  font-weight: 700;
+  transition: color var(--dur-base) var(--ease-out);
+}
+
+.horizon__band {
+  position: relative;
+  height: 36px;
+  overflow: hidden;
+  container-type: inline-size;
+  border-radius: var(--r-band);
+  background: var(--surface-2);
+}
+
+.horizon--compact .horizon__band {
+  height: 14px;
+  border-radius: var(--r-pill);
+}
+
+/* The fill reveals the left part of a gradient that spans the whole band */
+.horizon__fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.horizon__layer {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 100cqw;
+  background: linear-gradient(90deg, var(--c) 0%, color-mix(in srgb, var(--c) 22%, transparent) 100%);
+}
+
+.horizon__now {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--text);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--text) 45%, transparent);
+}
+
+.horizon--compact .horizon__now {
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  width: 2px;
+}
+
+.horizon__ticks {
+  position: relative;
+  height: 16px;
+  font-size: var(--fs-micro);
+  color: var(--text-2);
+}
+
+.horizon__ticks span {
+  position: absolute;
+  left: var(--pos);
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.horizon__ticks span:first-child {
+  transform: none;
+}
+
+.horizon__ticks span:last-child {
+  left: auto;
+  right: 0;
+  transform: none;
+}

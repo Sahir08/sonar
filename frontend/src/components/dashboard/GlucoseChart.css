@@ -1,0 +1,53 @@
+.glucose-chart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.glucose-chart__title {
+  font-size: var(--fs-body);
+  font-weight: 700;
+}
+
+.glucose-chart__plot {
+  flex: 1;
+  height: 200px;
+  min-height: 200px;
+  margin: 0 calc(var(--s-2) * -1);
+}
+
+.glucose-chart__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-4);
+  list-style: none;
+  font-size: var(--fs-micro);
+  color: var(--text-2);
+}
+
+.glucose-chart__legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.legend-tick {
+  width: 3px;
+  height: 11px;
+  border-radius: 2px;
+  background: var(--info);
+}
+
+.legend-band {
+  width: 14px;
+  height: 10px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--calm) 22%, transparent);
+  border: 1px dashed color-mix(in srgb, var(--calm) 55%, transparent);
+}

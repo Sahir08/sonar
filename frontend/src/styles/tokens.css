@@ -1,0 +1,118 @@
+/* Sonar design tokens. Dark is the default theme. */
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #0b0e14;
+  --surface: #141a23;
+  --surface-2: #1c2430;
+  --border: #263040;
+
+  --text: #f2f5f8;
+  --text-2: #9aa6b2;
+  --text-3: #8a96a3;
+
+  /* Status colors: only for status, always paired with a label or icon */
+  --calm: #5ed3c3;
+  --watch: #f5b547;
+  --high: #ff6b5e;
+  --low-now: #e5484d;
+
+  --info: #6ca8ff;
+  --carbs: #c9a0ff;
+  --steps: #9aa6b2;
+
+  /* Status colors for TEXT: adjusted only where needed to keep 4.5:1 contrast (fills use the base tokens) */
+  --calm-text: var(--calm);
+  --watch-text: var(--watch);
+  --high-text: var(--high);
+  --low-now-text: color-mix(in srgb, var(--low-now) 80%, var(--text));
+
+  --accent-a: #5ed3c3;
+  --accent-b: #6ca8ff;
+  --accent-gradient: linear-gradient(135deg, #5ed3c3, #6ca8ff);
+  --on-accent: #0b0e14;
+
+  --glass: color-mix(in srgb, var(--surface) 86%, transparent);
+  --scrim: rgb(3 5 9 / 0.62);
+  --shadow-sheet: 0 -12px 40px rgb(0 0 0 / 0.45);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: #f6f8fa;
+  --surface: #ffffff;
+  --surface-2: #eef2f6;
+  --border: #d9e0e8;
+
+  --text: #0f1720;
+  --text-2: #4a5866;
+  --text-3: #5f6b78;
+
+  --calm: #0e8c7e;
+  --watch: #a86a00;
+  --high: #d23b2e;
+  --low-now: #b4232a;
+
+  --info: #2f6fd0;
+  --carbs: #7c4dd1;
+  --steps: #4a5866;
+
+  --calm-text: color-mix(in srgb, var(--calm) 78%, var(--text));
+  --watch-text: color-mix(in srgb, var(--watch) 82%, var(--text));
+  --high-text: color-mix(in srgb, var(--high) 87%, var(--text));
+  --low-now-text: var(--low-now);
+
+  --accent-a: #0e8c7e;
+  --accent-b: #2f6fd0;
+
+  --scrim: rgb(15 23 32 / 0.4);
+  --shadow-sheet: 0 -12px 40px rgb(15 23 32 / 0.16);
+}
+
+:root {
+  /* Typography */
+  --font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+  --fs-title: 32px;
+  --fs-glucose: 56px;
+  --fs-h2: 17px;
+  --fs-body: 15px;
+  --fs-small: 13px;
+  --fs-caption: 12px;
+  --fs-micro: 11px;
+
+  /* Radii */
+  --r-card: 24px;
+  --r-card-sm: 18px;
+  --r-band: 12px;
+  --r-pill: 999px;
+  --r-sheet: 28px;
+
+  /* Spacing scale */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-7: 32px;
+
+  /* Layout */
+  --touch: 44px;
+  --tabbar-h: 60px;
+  --sidebar-w: 248px;
+  --content-max: 1100px;
+
+  /* Soft glows, status elements only */
+  --glow-calm: 0 0 18px color-mix(in srgb, var(--calm) 30%, transparent);
+  --glow-watch: 0 0 18px color-mix(in srgb, var(--watch) 30%, transparent);
+  --glow-high: 0 0 20px color-mix(in srgb, var(--high) 34%, transparent);
+  --glow-low-now: 0 0 20px color-mix(in srgb, var(--low-now) 36%, transparent);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 200ms;
+  --dur-base: 300ms;
+  --dur-slow: 400ms;
+}

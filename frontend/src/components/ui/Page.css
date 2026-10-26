@@ -1,0 +1,81 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+
+.page__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  min-height: var(--touch);
+  margin: calc(var(--s-3) * -1) 0 calc(var(--s-2) * -1);
+}
+
+/* Holds the source pill; the pill truncates instead of pushing the back link */
+.page__switcher {
+  display: flex;
+  justify-content: flex-end;
+  min-width: 0;
+  max-width: 62%;
+  margin-left: auto;
+}
+
+.page__back {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 2px;
+  min-height: var(--touch);
+  margin-left: -6px;
+  padding-right: var(--s-2);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  color: var(--text-2);
+}
+
+.page__back:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.page__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--s-4);
+  margin-bottom: var(--s-1);
+}
+
+.page__heading {
+  min-width: 0;
+}
+
+.page__eyebrow {
+  margin-bottom: var(--s-1);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--text-2);
+}
+
+.page__title {
+  font-size: var(--fs-title);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+}
+
+.page__actions {
+  display: flex;
+  flex: none;
+  gap: var(--s-2);
+}
+
+/* Closing call to action at the end of an info screen (Performance, About) */
+.page-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--s-2);
+}

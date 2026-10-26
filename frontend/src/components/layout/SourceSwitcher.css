@@ -1,0 +1,162 @@
+/* Data-source pill in the top right of Today, Patterns and Report.
+   Looks 36px tall but keeps a 44px touch target; long names truncate. */
+.source-pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  min-width: 0;
+  height: 36px;
+  padding: 0 10px 0 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    border-color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+
+.source-pill::after {
+  content: '';
+  position: absolute;
+  inset: -4px 0;
+}
+
+.source-pill:hover {
+  border-color: var(--text-3);
+}
+
+.source-pill:active {
+  transform: scale(0.97);
+}
+
+.source-pill__label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.source-pill__chevron {
+  flex: none;
+  color: var(--text-2);
+}
+
+/* Sheet list */
+.source-groups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-5);
+}
+
+.source-group__heading {
+  margin-bottom: var(--s-2);
+}
+
+.source-group__error {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--s-2);
+}
+
+.source-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  list-style: none;
+}
+
+.source-row {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  min-height: 62px;
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-card-sm);
+  background: var(--surface-2);
+  border: 1px solid transparent;
+  color: var(--text);
+  transition:
+    border-color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+
+.source-row:hover {
+  border-color: var(--text-3);
+  text-decoration: none;
+}
+
+.source-row:active {
+  transform: scale(0.98);
+}
+
+.source-row[aria-current='true'] {
+  border-color: var(--border);
+  background: transparent;
+}
+
+/* Rows that lead somewhere new (overview, upload, connect) are quieter than data sources */
+.source-row--action {
+  min-height: 56px;
+  background: transparent;
+  border-color: color-mix(in srgb, var(--border) 70%, transparent);
+}
+
+.source-row__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text-2);
+}
+
+.source-row--action .source-row__icon {
+  background: var(--surface-2);
+}
+
+.source-row__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.source-row__name {
+  font-weight: 700;
+}
+
+.source-row__meta {
+  overflow: hidden;
+  font-size: var(--fs-small);
+  color: var(--text-2);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.source-row__end {
+  flex: none;
+  margin-left: auto;
+  color: var(--text-3);
+}
+
+.source-row__end--current {
+  display: inline-flex;
+  color: var(--text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .source-pill:active,
+  .source-row:active {
+    transform: none;
+  }
+}

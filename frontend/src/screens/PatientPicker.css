@@ -1,0 +1,100 @@
+.picker__intro {
+  max-width: 52ch;
+  color: var(--text-2);
+}
+
+.picker {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--s-3);
+  list-style: none;
+}
+
+@media (min-width: 640px) {
+  .picker {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .picker {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.picker__card {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  height: 100%;
+  min-height: 76px;
+  padding: var(--s-4);
+  border-radius: var(--r-card-sm);
+  background: var(--surface);
+  border: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+  color: var(--text);
+  transition:
+    border-color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+
+:root[data-theme='light'] .picker__card {
+  border-color: var(--border);
+}
+
+a.picker__card:hover {
+  border-color: var(--text-3);
+  text-decoration: none;
+}
+
+a.picker__card:active {
+  transform: scale(0.98);
+}
+
+.picker__card--overview {
+  background: var(--surface-2);
+}
+
+.picker__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--surface-2);
+  color: var(--text-2);
+}
+
+.picker__card--overview .picker__icon {
+  background: var(--accent-gradient);
+  color: var(--on-accent);
+}
+
+.picker__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.picker__name {
+  font-weight: 700;
+}
+
+.picker__meta {
+  font-size: var(--fs-small);
+  color: var(--text-2);
+}
+
+.picker__chevron {
+  flex: none;
+  margin-left: auto;
+  color: var(--text-3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a.picker__card:active {
+    transform: none;
+  }
+}

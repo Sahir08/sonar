@@ -1,0 +1,114 @@
+.sheet-root {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.sheet-backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--scrim);
+}
+
+.sheet {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 560px;
+  max-height: calc(100dvh - env(safe-area-inset-top, 0px) - 40px);
+  border-radius: var(--r-sheet) var(--r-sheet) 0 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-bottom: 0;
+  box-shadow: var(--shadow-sheet);
+}
+
+.sheet:focus {
+  outline: none;
+}
+
+.sheet__grab {
+  flex: none;
+  padding: var(--s-2) var(--s-5) var(--s-3);
+  touch-action: none;
+  cursor: grab;
+}
+
+.sheet__handle {
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin: 0 auto var(--s-3);
+  border-radius: var(--r-pill);
+  background: var(--border);
+}
+
+.sheet__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--s-3);
+}
+
+.sheet__title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.sheet__subtitle {
+  margin-top: var(--s-1);
+  font-size: var(--fs-small);
+  color: var(--text-2);
+}
+
+.sheet__close {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: var(--touch);
+  height: var(--touch);
+  border: 0;
+  border-radius: 50%;
+  background: var(--surface-2);
+  color: var(--text-2);
+}
+
+.sheet__close:hover {
+  color: var(--text);
+}
+
+.sheet__body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: var(--s-2) var(--s-5) calc(env(safe-area-inset-bottom, 0px) + var(--s-6));
+}
+
+@media (min-width: 900px) {
+  .sheet-root {
+    align-items: center;
+    padding: var(--s-7);
+  }
+
+  .sheet {
+    max-height: min(780px, calc(100dvh - 64px));
+    border-radius: var(--r-sheet);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sheet__grab {
+    padding-top: var(--s-6);
+    cursor: default;
+  }
+
+  .sheet__handle {
+    display: none;
+  }
+}

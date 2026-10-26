@@ -1,0 +1,113 @@
+.overview__intro {
+  max-width: 60ch;
+  color: var(--text-2);
+}
+
+.overview__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--s-3);
+  list-style: none;
+}
+
+@media (min-width: 640px) {
+  .overview__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .overview__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.overview-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  height: 100%;
+  padding: var(--s-4) var(--s-4) var(--s-4);
+  border-radius: var(--r-card-sm);
+  background: var(--surface);
+  border: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+  color: var(--text);
+  transition:
+    border-color var(--dur-base) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+
+:root[data-theme='light'] .overview-card {
+  border-color: var(--border);
+}
+
+a.overview-card:hover {
+  border-color: var(--text-3);
+  text-decoration: none;
+}
+
+a.overview-card:active {
+  transform: scale(0.98);
+}
+
+.overview-card.is-high {
+  border-color: color-mix(in srgb, var(--high) 45%, transparent);
+}
+
+.overview-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--s-2);
+}
+
+.overview-card__who {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.overview-card__name {
+  font-weight: 700;
+}
+
+.overview-card__moment {
+  font-size: var(--fs-caption);
+  color: var(--text-2);
+}
+
+.overview-card__reading {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.overview-card__value {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.overview-card__unit {
+  font-size: var(--fs-small);
+  color: var(--text-2);
+}
+
+.overview-card__trend {
+  align-self: center;
+  color: var(--text);
+}
+
+.overview-card__risk {
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  transition: color var(--dur-base) var(--ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a.overview-card:active {
+    transform: none;
+  }
+}

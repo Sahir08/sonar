@@ -1,0 +1,202 @@
+/* Range bar */
+.range-bar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+
+.range-bar__bar {
+  display: flex;
+  gap: 2px;
+  height: 28px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--surface-2);
+}
+
+.range-bar__seg {
+  flex-basis: 0;
+  min-width: 3px;
+  height: 100%;
+}
+
+.range-bar__legend {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  list-style: none;
+}
+
+.range-bar__legend li {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  font-size: var(--fs-small);
+}
+
+.range-bar__swatch {
+  flex: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+}
+
+.range-bar__name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 var(--s-2);
+}
+
+.range-bar__sub {
+  font-size: var(--fs-caption);
+  color: var(--text-2);
+}
+
+.range-bar__value {
+  margin-left: auto;
+  font-weight: 700;
+}
+
+/* Lows by period */
+.period-bars {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  list-style: none;
+}
+
+.period-bars__row {
+  display: grid;
+  grid-template-columns: minmax(96px, 9.5rem) minmax(0, 1fr) 2.5ch;
+  align-items: center;
+  gap: var(--s-3);
+}
+
+.period-bars__label {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.period-bars__hours {
+  font-size: var(--fs-caption);
+  font-weight: 400;
+  color: var(--text-2);
+}
+
+.period-bars__track {
+  height: 14px;
+  border-radius: 4px;
+  background: var(--surface-2);
+}
+
+.period-bars__fill {
+  display: block;
+  height: 100%;
+  min-width: 4px;
+  border-radius: 4px;
+  background: var(--low-now);
+}
+
+.period-bars__count {
+  font-weight: 700;
+  text-align: right;
+}
+
+/* 24-hour strip */
+.hour-strip {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+
+.hour-strip__cells {
+  display: grid;
+  grid-template-columns: repeat(24, minmax(0, 1fr));
+  gap: 2px;
+}
+
+.hour-strip__cell {
+  height: 28px;
+  border-radius: 4px;
+  background: var(--surface-2);
+}
+
+.hour-strip__axis {
+  position: relative;
+  height: 14px;
+  font-size: var(--fs-micro);
+  color: var(--text-2);
+}
+
+.hour-strip__axis span {
+  position: absolute;
+  white-space: nowrap;
+}
+
+.hour-strip__caption {
+  font-size: var(--fs-caption);
+  color: var(--text-2);
+}
+
+/* Hourly profile */
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.profile__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-4);
+  list-style: none;
+  font-size: var(--fs-micro);
+  color: var(--text-2);
+}
+
+.profile__legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.profile__key {
+  width: 14px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+.profile__key--line {
+  height: 2px;
+  background: var(--text);
+}
+
+.profile__key--target {
+  background: color-mix(in srgb, var(--calm) 20%, transparent);
+  border: 1px dashed color-mix(in srgb, var(--calm) 60%, transparent);
+}
+
+/* Tooltip */
+.chart-tooltip {
+  padding: var(--s-2) var(--s-3);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.3);
+  font-size: var(--fs-caption);
+  color: var(--text-2);
+}
+
+.chart-tooltip__title {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.chart-tooltip strong {
+  color: var(--text);
+}

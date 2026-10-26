@@ -1,0 +1,78 @@
+.segmented {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.segmented__legend {
+  padding: 0;
+  margin-bottom: var(--s-1);
+  font-weight: 600;
+}
+
+.segmented__description {
+  margin-bottom: var(--s-3);
+  font-size: var(--fs-small);
+  color: var(--text-2);
+}
+
+.segmented__legend + .segmented__track {
+  margin-top: var(--s-2);
+}
+
+.segmented__track {
+  display: flex;
+  gap: var(--s-1);
+  padding: var(--s-1);
+  border-radius: var(--r-pill);
+  background: var(--surface-2);
+}
+
+.segmented__option {
+  position: relative;
+  flex: 1;
+  display: grid;
+  place-items: center;
+  min-height: var(--touch);
+  padding: 0 var(--s-3);
+  border-radius: var(--r-pill);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--text-2);
+  cursor: pointer;
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+}
+
+.segmented__option input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.segmented__option.is-selected {
+  color: var(--text);
+  background: var(--surface);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.25);
+}
+
+.segmented--sm .segmented__track {
+  gap: 2px;
+  padding: 3px;
+}
+
+.segmented--sm .segmented__option {
+  min-width: var(--touch);
+  min-height: 38px;
+  padding: 0 var(--s-2);
+  font-size: var(--fs-caption);
+}
+
+.segmented__option:has(input:focus-visible) {
+  outline: 2px solid var(--info);
+  outline-offset: 2px;
+}

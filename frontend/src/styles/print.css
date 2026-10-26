@@ -1,0 +1,84 @@
+/* Print (doctor report "Save as PDF"): white background, dark text, no navigation or buttons. */
+@media print {
+  @page {
+    margin: 12mm;
+  }
+
+  /* Light palette for paper, whatever theme is on screen */
+  :root,
+  :root[data-theme='dark'],
+  :root[data-theme='light'] {
+    color-scheme: light;
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --surface-2: #eef2f6;
+    --border: #d9e0e8;
+    --text: #0f1720;
+    --text-2: #4a5866;
+    --text-3: #5f6b78;
+    --calm: #0e8c7e;
+    --watch: #a86a00;
+    --high: #d23b2e;
+    --low-now: #b4232a;
+    --info: #2f6fd0;
+    --carbs: #7c4dd1;
+    --calm-text: color-mix(in srgb, #0e8c7e 78%, #0f1720);
+    --watch-text: color-mix(in srgb, #a86a00 82%, #0f1720);
+    --high-text: color-mix(in srgb, #d23b2e 87%, #0f1720);
+    --low-now-text: #b4232a;
+    --accent-a: #0e8c7e;
+    --accent-b: #2f6fd0;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #0f1720;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .sidebar,
+  .tabbar,
+  .skip-link,
+  .page__back,
+  .btn,
+  .alert-banner-layer,
+  .sheet-root,
+  .page__topbar {
+    display: none !important;
+  }
+
+  .app {
+    display: block !important;
+  }
+
+  .app__main,
+  .app--has-tabs .app__main {
+    padding: 0 !important;
+  }
+
+  .app__content {
+    max-width: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .card,
+  .report__section,
+  .report__tiles,
+  .report__pair,
+  .metric {
+    break-inside: avoid;
+    box-shadow: none !important;
+  }
+
+  .card {
+    border: 1px solid #d9e0e8 !important;
+  }
+
+  .report {
+    max-width: none;
+    gap: 10px;
+  }
+}

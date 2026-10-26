@@ -1,0 +1,76 @@
+.ns__intro {
+  max-width: 52ch;
+  color: var(--text-2);
+}
+
+.ns__open {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+}
+
+.ns__open-title {
+  font-weight: 700;
+}
+
+.ns__open-meta {
+  font-size: var(--fs-small);
+  color: var(--text-2);
+}
+
+.ns__open-actions {
+  display: flex;
+  gap: var(--s-2);
+}
+
+.ns__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-5);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+
+.field__label {
+  font-weight: 600;
+}
+
+.field__input {
+  min-height: 48px;
+  padding: 0 var(--s-4);
+  border: 1px solid var(--border);
+  border-radius: var(--r-card-sm);
+  background: var(--surface-2);
+  font-size: 16px; /* 16px stops iOS from zooming on focus */
+  color: var(--text);
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+
+.field__input::placeholder {
+  color: var(--text-3);
+}
+
+.field__input:focus {
+  border-color: var(--info);
+  outline: none;
+}
+
+.field__input:focus-visible {
+  outline: 2px solid var(--info);
+  outline-offset: 1px;
+}
+
+.field__input:disabled {
+  opacity: 0.6;
+}
+
+.field__help {
+  font-size: var(--fs-small);
+  color: var(--text-2);
+}

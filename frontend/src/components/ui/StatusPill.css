@@ -1,0 +1,34 @@
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: 6px 12px;
+  border-radius: var(--r-pill);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: var(--status-text);
+  background: color-mix(in srgb, var(--status) 15%, transparent);
+  transition:
+    color var(--dur-base) var(--ease-out),
+    background-color var(--dur-base) var(--ease-out);
+}
+
+.status-pill--sm {
+  padding: 4px 10px;
+  font-size: var(--fs-caption);
+}
+
+.status-pill__dot {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--status);
+  box-shadow: var(--status-glow);
+}
+
+:root[data-theme='light'] .status-pill {
+  background: color-mix(in srgb, var(--status) 11%, transparent);
+}

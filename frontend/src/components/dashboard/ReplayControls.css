@@ -1,0 +1,104 @@
+.replay {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.replay__row {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+}
+
+.replay__row--meta {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-4);
+}
+
+.replay__play {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: var(--touch);
+  height: var(--touch);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface-2);
+  color: var(--text);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.replay__play:active {
+  transform: scale(0.96);
+}
+
+.replay__time {
+  font-size: var(--fs-small);
+  color: var(--text-2);
+}
+
+/* Scrubber */
+.replay__scrubber {
+  flex: 1;
+  min-width: 0;
+  height: var(--touch);
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.replay__scrubber::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: var(--r-pill);
+  background: linear-gradient(90deg, var(--text-2) var(--pct), var(--surface-2) var(--pct));
+}
+
+.replay__scrubber::-moz-range-track {
+  height: 6px;
+  border-radius: var(--r-pill);
+  background: linear-gradient(90deg, var(--text-2) var(--pct), var(--surface-2) var(--pct));
+}
+
+.replay__scrubber::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  margin-top: -7px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--text);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.35);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.replay__scrubber::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--text);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.35);
+}
+
+.replay__scrubber:focus-visible {
+  outline: none;
+}
+
+.replay__scrubber:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid var(--info);
+  outline-offset: 2px;
+}
+
+.replay__scrubber:focus-visible::-moz-range-thumb {
+  outline: 2px solid var(--info);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .replay__play:active {
+    transform: none;
+  }
+}

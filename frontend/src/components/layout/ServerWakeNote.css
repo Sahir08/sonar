@@ -1,0 +1,46 @@
+/* Sits above the tab bar on mobile, bottom center of the content area on desktop. Never shifts layout. */
+.wake-note-layer {
+  position: fixed;
+  inset: auto 0 calc(env(safe-area-inset-bottom, 0px) + var(--tabbar-h) + var(--s-3));
+  z-index: 60;
+  display: flex;
+  justify-content: center;
+  padding: 0 var(--s-4);
+  pointer-events: none;
+}
+
+.wake-note {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  max-width: 420px;
+  padding: var(--s-3) var(--s-4);
+  border: 1px solid var(--border);
+  border-radius: var(--r-card-sm);
+  background: var(--surface-2);
+  box-shadow: var(--shadow-sheet);
+  font-size: var(--fs-small);
+  color: var(--text);
+}
+
+.wake-note svg {
+  flex: none;
+  color: var(--text-2);
+}
+
+.wake-note__sub {
+  color: var(--text-2);
+}
+
+@media (min-width: 900px) {
+  .wake-note-layer {
+    bottom: var(--s-6);
+    left: var(--sidebar-w);
+  }
+}
+
+@media print {
+  .wake-note-layer {
+    display: none;
+  }
+}

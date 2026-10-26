@@ -1,0 +1,9 @@
+{
+  "features": ["glucose", "slope_15m", "slope_30m", "delta_60m", "std_60m",
+               "bolus_1h", "bolus_3h", "basal_1h", "carbs_1h", "carbs_3h",
+               "steps_30m", "steps_60m", "hr_30m", "hour"],
+  "threshold": 0.05,
+  "horizon_min": 60,
+  "confirm_readings": 2,
+  "snooze_min": 60
+}

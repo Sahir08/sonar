@@ -1,0 +1,19 @@
+.card {
+  background: var(--surface);
+  border: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+  color: var(--text);
+}
+
+.card--md {
+  border-radius: var(--r-card);
+  padding: var(--s-5);
+}
+
+.card--sm {
+  border-radius: var(--r-card-sm);
+  padding: var(--s-4);
+}
+
+:root[data-theme='light'] .card {
+  border-color: var(--border);
+}

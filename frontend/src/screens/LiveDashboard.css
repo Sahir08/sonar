@@ -1,0 +1,28 @@
+.live-bar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.live-bar__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+}
+
+.live-bar__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.live-bar__updated {
+  font-weight: 600;
+}
+
+.live-bar__hint {
+  font-size: var(--fs-caption);
+  color: var(--text-2);
+}

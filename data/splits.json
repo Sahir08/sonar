@@ -1,0 +1,33 @@
+{
+  "test": [
+    "HUPA0014P",
+    "HUPA0016P",
+    "HUPA0020P",
+    "HUPA0021P",
+    "HUPA0025P"
+  ],
+  "val": [
+    "HUPA0007P",
+    "HUPA0009P",
+    "HUPA0011P",
+    "HUPA0019P"
+  ],
+  "train": [
+    "HUPA0001P",
+    "HUPA0002P",
+    "HUPA0003P",
+    "HUPA0004P",
+    "HUPA0005P",
+    "HUPA0006P",
+    "HUPA0010P",
+    "HUPA0015P",
+    "HUPA0017P",
+    "HUPA0018P",
+    "HUPA0022P",
+    "HUPA0023P",
+    "HUPA0024P",
+    "HUPA0026P",
+    "HUPA0027P",
+    "HUPA0028P"
+  ]
+}

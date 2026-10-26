@@ -1,0 +1,240 @@
+.why {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+
+.why__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.why__heading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.why__cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  list-style: none;
+}
+
+/* Factor card */
+.factor {
+  border-radius: var(--r-card-sm);
+  background: var(--surface-2);
+}
+
+.factor__button {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  width: 100%;
+  min-height: var(--touch);
+  padding: var(--s-4);
+  border: 0;
+  border-radius: var(--r-card-sm);
+  background: none;
+  text-align: left;
+}
+
+.factor__top {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-2);
+}
+
+.factor__name {
+  font-size: var(--fs-body);
+  font-weight: 700;
+}
+
+.factor__value {
+  margin-left: auto;
+  font-size: var(--fs-small);
+  color: var(--text-2);
+  text-align: right;
+}
+
+.factor__chevron {
+  flex: none;
+  align-self: center;
+  color: var(--text-3);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.factor__chevron.is-open {
+  transform: rotate(180deg);
+}
+
+.factor__track {
+  display: block;
+  height: 8px;
+  overflow: hidden;
+  border-radius: var(--r-pill);
+  background: var(--bg);
+}
+
+:root[data-theme='light'] .factor__track {
+  background: var(--border);
+}
+
+.factor__fill {
+  display: block;
+  height: 100%;
+  border-radius: var(--r-pill);
+  transform-origin: left center;
+}
+
+.factor__sub {
+  margin-top: calc(var(--s-1) * -1);
+  font-size: var(--fs-caption);
+  color: var(--text-2);
+}
+
+.factor__details {
+  overflow: hidden;
+}
+
+.factor__details-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  padding: 0 var(--s-4) var(--s-4);
+}
+
+.factor__note {
+  font-size: var(--fs-small);
+  color: var(--text-2);
+}
+
+.factor__detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--border);
+  list-style: none;
+  font-size: var(--fs-small);
+}
+
+.factor__detail-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-4);
+}
+
+.factor__detail-list li > span:last-child {
+  flex: none;
+  color: var(--text-2);
+}
+
+.factor__shared {
+  color: var(--text-3);
+}
+
+.factor__caption {
+  font-size: var(--fs-micro);
+  color: var(--text-3);
+}
+
+/* Small factor rows */
+.why__small {
+  list-style: none;
+}
+
+.small-factor__button {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  width: 100%;
+  min-height: var(--touch);
+  padding: 0 var(--s-1);
+  border: 0;
+  border-radius: var(--r-card-sm);
+  background: none;
+  font-size: var(--fs-small);
+  color: var(--text-2);
+  text-align: left;
+}
+
+.small-factor__value {
+  margin-left: auto;
+}
+
+.small-factor .factor__details-inner {
+  padding: 0 var(--s-1) var(--s-3);
+}
+
+/* Context */
+.why__context {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--border);
+}
+
+.why__context-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-3);
+  list-style: none;
+}
+
+.why__context-grid li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-card-sm);
+  background: var(--surface-2);
+}
+
+.why__context-label {
+  font-size: var(--fs-micro);
+  color: var(--text-2);
+}
+
+.why__context-value {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.why__context-value.is-missing {
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--text-3);
+}
+
+.why__note {
+  font-size: var(--fs-caption);
+  color: var(--text-2);
+}
+
+.why__skeleton-card {
+  padding: var(--s-4);
+  border-radius: var(--r-card-sm);
+  background: var(--surface-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .factor__chevron {
+    transition: none;
+  }
+}
+
+/* "Go to this moment" (replay only) */
+.why__goto {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--s-5);
+}

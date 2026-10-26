@@ -1,0 +1,7 @@
+{
+  "features": ["glucose", "slope_15m", "slope_30m", "delta_60m", "std_60m", "hour"],
+  "threshold": 0.2,
+  "horizon_min": 60,
+  "confirm_readings": 2,
+  "snooze_min": 60
+}
